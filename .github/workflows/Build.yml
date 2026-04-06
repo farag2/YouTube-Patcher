@@ -91,7 +91,7 @@ jobs:
               CompressionLevel = "Fastest"
               Force            = $true
           }
-          Compress-Archive @Parameters
+          #Compress-Archive @Parameters
 
           $Parameters = @{
               Path             = "Morphe_Builder\youtube_morphe.apk", "Morphe_Builder\microg_morphe.apk"
@@ -99,7 +99,7 @@ jobs:
               CompressionLevel = "Fastest"
               Force            = $true
           }
-          #Compress-Archive @Parameters
+          Compress-Archive @Parameters
 
       - name: Release Notes Template
         env:
