@@ -9,7 +9,7 @@ $CLIReVancedvTag = (Invoke-RestMethod @Parameters).tag_name
 $CLIReVancedTag = $CLIReVancedvTag.replace("v", "")
 
 $Parameters = @{
-	Uri             = "https://github.com/revanced/revanced-cli/releases/download/$CLIvtag/revanced-cli-$CLIReVancedTag-all.jar"
+	Uri             = "https://github.com/revanced/revanced-cli/releases/download/$CLIReVancedvTag/revanced-cli-$CLIReVancedTag-all.jar"
 	Outfile         = "ReVanced_Builder\revanced-cli.jar"
 	Headers         = $Headers
 	UseBasicParsing = $true
