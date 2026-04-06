@@ -112,9 +112,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $Tag   = "${{ inputs.tag }}"
-          #$ReVanced  = Get-Item -Path "ReVanced_Builder\YouTube_ReVanced.zip").FullName
-          $Morphe   = (Get-Item -Path "Morphe_Builder\YouTube_Morphe.zip").FullName
-          $Files = $Morphe
+          #$ReVanced = Get-Item -Path "YouTube_ReVanced.zip").FullName
+          $Morphe    = (Get-Item -Path "YouTube_Morphe.zip").FullName
+          #$Files = $Morphe + $ReVanced
           $Title = $env:RELEASE_NAME
 
-          gh release create $Tag $Files --title $Title --notes-file ReleaseNotesTemplate.md
+          gh release create $Tag $Morphe --title $Title --notes-file ReleaseNotesTemplate.md
