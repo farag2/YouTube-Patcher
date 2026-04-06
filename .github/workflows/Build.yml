@@ -34,7 +34,7 @@ jobs:
 
       - name: ReVanced CLI
         run: |
-          ./Scripts\ReVanced_CLI.ps1
+          .\Scripts\ReVanced_CLI.ps1
 
       - name: Morphe CLI
         run: |
