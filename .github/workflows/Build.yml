@@ -26,7 +26,7 @@ jobs:
       - name: YouTube ReVanced
         run: |
           # https://github.com/github/dmca/blob/master/2026/03/2026-03-12-morpheapp.md
-          # .\Scripts\YouTube_ReVanced.ps1
+          .\Scripts\YouTube_ReVanced.ps1
 
       - name: YouTube Morphe
         run: |
@@ -34,7 +34,7 @@ jobs:
 
       - name: ReVanced CLI
         run: |
-          # ./Scripts\ReVanced_CLI.ps1
+          ./Scripts\ReVanced_CLI.ps1
 
       - name: Morphe CLI
         run: |
@@ -42,7 +42,7 @@ jobs:
 
       - name: ReVanced Patches
         run: |
-          # .\Scripts\ReVanced_Patches.ps1
+          .\Scripts\ReVanced_Patches.ps1
 
       - name: Morphe Patches
         run: |
@@ -50,7 +50,7 @@ jobs:
 
       - name: ReVanced MicroG
         run: |
-          # .\Scripts\MicroG_ReVanced.ps1
+          .\Scripts\MicroG_ReVanced.ps1
 
       - name: MicroG Morphe
         run: |
@@ -75,13 +75,13 @@ jobs:
           --out "Morphe_Builder\youtube_morphe.apk"
 
           # Building ReVanced
-          # java -jar "ReVanced_Builder\revanced-cli.jar" `
-          #patch "ReVanced_Builder\youtube.apk" `
-          #--patches "ReVanced_Builder\revanced-patches.rvp" `
-          #--force `
-          #--purge `
-          #--bypass-verification `
-          #--out "ReVanced_Builder\youtube_revanced.apk"
+          java -jar "ReVanced_Builder\revanced-cli.jar" `
+          patch "ReVanced_Builder\youtube.apk" `
+          --patches "ReVanced_Builder\revanced-patches.rvp" `
+          --force `
+          --purge `
+          --bypass-verification `
+          --out "ReVanced_Builder\youtube_revanced.apk"
 
       - name: Creating archive
         run: |
@@ -91,7 +91,7 @@ jobs:
               CompressionLevel = "Fastest"
               Force            = $true
           }
-          #Compress-Archive @Parameters
+          Compress-Archive @Parameters
 
           $Parameters = @{
               Path             = "Morphe_Builder\youtube_morphe.apk", "Morphe_Builder\microg_morphe.apk"
@@ -130,4 +130,3 @@ jobs:
           files: |
             YouTube_ReVanced.zip
             YouTube_Morphe.zip
-
