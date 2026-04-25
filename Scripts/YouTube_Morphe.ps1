@@ -89,7 +89,7 @@ $Options.AddArgument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) App
 $driver = New-Object -TypeName OpenQA.Selenium.Edge.EdgeDriver("Morphe_Builder\msedgedriver.exe", $Options)
 
 # https://www.apkmirror.com/apk/google-inc/youtube/
-$APKMirrorURL = "https://www.apkmirror.com/apk/google-inc/youtube/youtube-$($MorpheYT)-release/youtube-$($MorpheYT)-4-android-apk-download/"
+$APKMirrorURL = "https://www.apkmirror.com/apk/google-inc/youtube/youtube-$($MorpheYT)-release/youtube-$($MorpheYT)-android-apk-download/"
 
 Write-Verbose -Message "Trying URL $APKMirrorURL" -Verbose
 
