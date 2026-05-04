@@ -21,11 +21,13 @@ Patch YouTube client (.apk) using ReVanced or Morphe patches via GitHub Actions
 
 ## Usage
 
+* Fork the repository
+
 ```powershell
 git clone https://github.com/farag2/YouTube_Patcher
 ```
 
-Create a new release by clicking on [`Build`](https://github.com/farag2/YouTube-Patcher/actions/workflows/Build.yml) Action button.
+* Move to [`Build`](https://github.com/farag2/YouTube-Patcher/actions/workflows/Build.yml) and run a new workflow by setting release name.
 
 <img width="1955" height="685" src="https://github.com/user-attachments/assets/801b99f5-5f5d-493d-8ac5-72e26627c20a" />
 
