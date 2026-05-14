@@ -8,7 +8,7 @@ $Parameters = @{
 	Verbose         = $true
 }
 $Patches = Invoke-RestMethod @Parameters
-$MorpheYTdot = ($Patches.patches | Where-Object -FilterScript {$_.name -eq "Video ads"}).compatiblePackages."com.google.android.youtube" | Sort-Object -Descending -Unique | Select-Object -First 1
+$MorpheYTdot = ($Patches.patches | Where-Object -FilterScript {$_.name -eq "Video ads"}).compatiblePackages.targets.version | Sort-Object -Descending -Unique | Select-Object -First 1
 $MorpheYT = $MorpheYTdot.Replace(".", "-")
 
 Get-Process -Name msedgedriver, msedge -ErrorAction Ignore | Stop-Process -Force -ErrorAction Ignore
