@@ -68,7 +68,7 @@ Remove-Item -Path $Paths -Force -Recurse
 Write-Verbose -Message "Adding web driver" -Verbose
 
 # Start parsing page
-Add-Type -Path "Morphe_Builder\WebDriver.dll"
+Add-Type -Path "Morphe_Builder\Selenium.WebDriver.dll"
 
 $Options = New-Object -TypeName OpenQA.Selenium.Edge.EdgeOptions
 $Options.AddArgument("--headless=new")
