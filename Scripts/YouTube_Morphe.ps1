@@ -30,11 +30,14 @@ $Parameters = @{
 }
 Invoke-Webrequest @Parameters
 
+& "$env:SystemRoot\System32\tar.exe" -xvf "Morphe_Builder\edgedriver_win64.zip" -C "Morphe_Builder" "msedgedriver.exe"
+
 Write-Verbose -Message "Selenium web driver" -Verbose
 
 # Download Selenium web driver
 # https://www.nuget.org/packages/selenium.webdriver
 # https://www.nuget.org/packages/selenium.support
+# https://github.com/SeleniumHQ/selenium
 try
 {
 	$Parameters = @{
@@ -54,23 +57,9 @@ catch
 	exit 1
 }
 
-$Parameters = @{
-	Path            = "Morphe_Builder\edgedriver_win64.zip"
-	DestinationPath = "Morphe_Builder"
-	Force           = $true
-	Verbose         = $true
-}
-Expand-Archive @Parameters
-
-# Extract WebDriver.dll from archive
-Add-Type -Assembly System.IO.Compression.FileSystem
-$ZIP = [IO.Compression.ZipFile]::OpenRead("Morphe_Builder\selenium.webdriver.nupkg")
-$Entries = $ZIP.Entries | Where-Object -FilterScript {$_.FullName -eq "lib/net8.0/WebDriver.dll"}
-$Entries | ForEach-Object -Process {[IO.Compression.ZipFileExtensions]::ExtractToFile($_, "Morphe_Builder\$($_.Name)", $true)}
-$ZIP.Dispose()
+& "$env:SystemRoot\System32\tar.exe" -xvf "Morphe_Builder\selenium.webdriver.nupkg" -C "Morphe_Builder" --strip-components=2 "lib/net8.0/Selenium.WebDriver.dll"
 
 $Paths = @(
-	"Morphe_Builder\Driver_Notes",
 	"Morphe_Builder\edgedriver_win64.zip",
 	"Morphe_Builder\selenium.webdriver.nupkg"
 )
