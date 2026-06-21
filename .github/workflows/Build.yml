@@ -20,37 +20,19 @@ jobs:
 
       - name: Creating folders
         run: |
-          New-Item -Path ReVanced_Builder -ItemType Directory -Force
           New-Item -Path Morphe_Builder -ItemType Directory -Force
-
-      - name: YouTube ReVanced
-        run: |
-          # https://github.com/github/dmca/blob/master/2026/03/2026-03-12-morpheapp.md
-          #.\Scripts\YouTube_ReVanced.ps1
 
       - name: YouTube Morphe
         run: |
           .\Scripts\YouTube_Morphe.ps1
 
-      - name: ReVanced CLI
-        run: |
-          #.\Scripts\ReVanced_CLI.ps1
-
       - name: Morphe CLI
         run: |
           .\Scripts\Morphe_CLI.ps1
 
-      - name: ReVanced Patches
-        run: |
-          #.\Scripts\ReVanced_Patches.ps1
-
       - name: Morphe Patches
         run: |
           .\Scripts\Morphe_Patches.ps1
-
-      - name: ReVanced MicroG
-        run: |
-          #.\Scripts\MicroG_ReVanced.ps1
 
       - name: MicroG Morphe
         run: |
@@ -63,7 +45,6 @@ jobs:
 
       - name: Building
         run: |
-          # https://github.com/ReVanced/revanced-cli/tree/main/docs
           # https://github.com/MorpheApp/morphe-cli/tree/main/docs
 
           # Building Morphe
@@ -74,25 +55,8 @@ jobs:
           --purge `
           --out "Morphe_Builder\youtube_morphe.apk"
 
-          # Building ReVanced
-          #java -jar "ReVanced_Builder\revanced-cli.jar" `
-          #patch "ReVanced_Builder\youtube.apk" `
-          #--patches "ReVanced_Builder\revanced-patches.rvp" `
-          #--force `
-          #--purge `
-          #--bypass-verification `
-          #--out "ReVanced_Builder\youtube_revanced.apk"
-
       - name: Creating archive
         run: |
-          $Parameters = @{
-              Path             = "ReVanced_Builder\youtube_revanced.apk", "ReVanced_Builder\microg_revanced.apk", "ReVanced_Builder\microg_revanced_huawei.apk"
-              DestinationPath  = "YouTube_ReVanced.zip"
-              CompressionLevel = "Fastest"
-              Force            = $true
-          }
-          #Compress-Archive @Parameters
-
           $Parameters = @{
               Path             = "Morphe_Builder\youtube_morphe.apk", "Morphe_Builder\microg_morphe.apk"
               DestinationPath  = "YouTube_Morphe.zip"
@@ -112,7 +76,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $Tag   = "${{ inputs.tag }}"
-          #$ReVanced = Get-Item -Path "YouTube_ReVanced.zip").FullName
           $Morphe    = (Get-Item -Path "YouTube_Morphe.zip").FullName
           #$Files = $Morphe + $ReVanced
           $Title = $env:RELEASE_NAME
