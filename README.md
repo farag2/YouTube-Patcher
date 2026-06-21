@@ -13,7 +13,7 @@
 
 # YouTube Patcher
 
-Patch YouTube client (.apk) using ReVanced or Morphe patches via GitHub Actions
+Patch YouTube client (.apk) using Morphe patches via GitHub Actions
 
 <kbd>
 	<a href="https://github.com/farag2/YouTube-Patcher/releases/latest"><img src="https://img.shields.io/badge/Download-green?labelColor=151B23&color=151B23&style=for-the-badge"></a>
@@ -33,7 +33,6 @@ git clone https://github.com/farag2/YouTube_Patcher
 
 ## Links
 
-* [ReVanced](https://github.com/ReVanced)
 * [Morphe](https://github.com/MorpheApp)
 * [Selenium](https://github.com/SeleniumHQ/selenium)
 * [Telegram](https://t.me/sophia_chat)
