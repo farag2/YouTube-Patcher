@@ -1,8 +1,4 @@
-(Get-Content -Path ReleaseNotesTemplate.md -Encoding utf8 -Raw).Replace("ReVancedYTdot", $env:ReVancedYTdot).
-	Replace("CLIReVancedTag", $env:CLIReVancedTag).
-	Replace("ReVancedPatchesTag", $env:ReVancedPatchesTag).
-	Replace("MicroG_ReVanced", $env:MicroG_ReVanced).
-	Replace("MorpheYTdot", $env:MorpheYTdot).
+(Get-Content -Path ReleaseNotesTemplate.md -Encoding utf8 -Raw).Replace("MorpheYTdot", $env:MorpheYTdot).
 	Replace("CLIMorpheTag", $env:CLIMorpheTag).
 	Replace("MorphePatchesTag", $env:MorphePatchesTag).
 	Replace("MicroG_Morphe", $env:MicroG_Morphe) | Set-Content -Path ReleaseNotesTemplate.md -Encoding utf8 -Force
