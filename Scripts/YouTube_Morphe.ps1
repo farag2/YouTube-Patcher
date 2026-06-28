@@ -105,7 +105,7 @@ $driver.Navigate().GoToUrl($DownloadURL)
 #$DownloadURL = $driver.FindElement([OpenQA.Selenium.By]::Id("download-link")).GetAttribute("href")
 #$driver.Navigate().GoToUrl($DownloadURL)
 
-# Get runned Downloads folder
+# Get runner Downloads folder
 $DownloadsFolder = Get-ItemPropertyValue -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" -Name "{374DE290-123F-4565-9164-39C4925E467B}"
 
 # Wait until apk is being downloaded
@@ -121,6 +121,8 @@ do
 	}
 }
 while (-not $APK)
+
+$Driver.Quit()
 
 # Copy APK to Morphe_Builder folder
 $Parameters = @{
