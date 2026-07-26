@@ -52,7 +52,6 @@ jobs:
           patch "Morphe_Builder\youtube.apk" `
           --patches "Morphe_Builder\morphe-patches.mpp" `
           --force `
-          --purge `
           --out "Morphe_Builder\youtube_morphe.apk"
 
       - name: Creating archive
