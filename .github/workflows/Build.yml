@@ -26,9 +26,9 @@ jobs:
         run: |
           .\Scripts\YouTube_Morphe.ps1
 
-      - name: Morphe CLI
+      - name: Morphe Desktop
         run: |
-          .\Scripts\Morphe_CLI.ps1
+          .\Scripts\Morphe_Desktop.ps1
 
       - name: Morphe Patches
         run: |
@@ -45,10 +45,10 @@ jobs:
 
       - name: Building
         run: |
-          # https://github.com/MorpheApp/morphe-cli/tree/main/docs
+          # https://github.com/MorpheApp/morphe-desktop/tree/main/docs
 
           # Building Morphe
-          java -jar "Morphe_Builder\morphe-cli.jar" `
+          java -jar "Morphe_Builder\morphe-desktop.jar" `
           patch "Morphe_Builder\youtube.apk" `
           --patches "Morphe_Builder\morphe-patches.mpp" `
           --force `
