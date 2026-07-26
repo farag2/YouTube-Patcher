@@ -1,6 +1,6 @@
 # Morphe
 
 * Morphe YouTube MorpheYTdot
-* Morphe CLI CLIMorpheTag
+* Morphe Desktop MorpheDesktopTag
 * Morphe Patches MorphePatchesTag
 * Morphe MicroG MicroG_Morphe
