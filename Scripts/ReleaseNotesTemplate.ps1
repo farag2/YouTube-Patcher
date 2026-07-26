@@ -1,5 +1,5 @@
 (Get-Content -Path ReleaseNotesTemplate.md -Encoding utf8 -Raw).Replace("MorpheYTdot", $env:MorpheYTdot).
-	Replace("CLIMorpheTag", $env:CLIMorpheTag).
+	Replace("MorpheDesktopTag", $env:MorpheDesktopTag).
 	Replace("MorphePatchesTag", $env:MorphePatchesTag).
 	Replace("MicroG_Morphe", $env:MicroG_Morphe) | Set-Content -Path ReleaseNotesTemplate.md -Encoding utf8 -Force
 
