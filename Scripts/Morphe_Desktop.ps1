@@ -1,7 +1,12 @@
 # https://github.com/MorpheApp/morphe-desktop
 
+$Headers = @{
+	Accept                 = "application/vnd.github+json"
+	Authorization          = "Bearer $env:GITHUB_TOKEN"
+}
 $Parameters = @{
 	Uri             = "https://api.github.com/repos/MorpheApp/morphe-desktop/releases/latest"
+	Headers         = $Headers
 	UseBasicParsing = $true
 	Verbose         = $true
 }

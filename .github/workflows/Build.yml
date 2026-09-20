@@ -23,18 +23,26 @@ jobs:
           New-Item -Path Morphe_Builder -ItemType Directory -Force
 
       - name: YouTube Morphe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           .\Scripts\YouTube_Morphe.ps1
 
       - name: Morphe Desktop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           .\Scripts\Morphe_Desktop.ps1
 
       - name: Morphe Patches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           .\Scripts\Morphe_Patches.ps1
 
       - name: MicroG Morphe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           .\Scripts\MicroG_Morphe.ps1
 
