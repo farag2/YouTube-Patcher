@@ -11,7 +11,7 @@ $Parameters = @{
 	Verbose         = $true
 }
 $Releases = Invoke-RestMethod @Parameters
-$URL = ($Releases.assets | Where-Object -FilterScript {$_.browser_download_url -match "microg-$($Releases.tag_name)-arm64-v8a.apk"}).browser_download_url
+$URL = ($Releases.assets | Where-Object -FilterScript {$_.browser_download_url -match "microg-$($Releases.tag_name)-icon-arm64-v8a.apk"}).browser_download_url
 
 $Parameters = @{
 	Uri             = $URL
